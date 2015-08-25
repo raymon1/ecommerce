@@ -29,7 +29,7 @@ html, body {
 
 .main {
  background-color: #f2f2f2 ;
- padding: 10px 40px 40px 40px;
+ padding: 80px 40px 40px 40px;
 
 }
 
@@ -39,15 +39,14 @@ html, body {
  margin: 0 0 40px 0;
  padding: 15px 0;
    line-height: 100px;
-   width: 50%;
+   width: 100%;
 }
 
 .main h1 img {
    display: inline-block;
-   width: 200%;
+   width: 100%;
    height: 300px;
-   margin: 0 0 10px 0;
-    padding: 0 0;
+   margin-top: -30px;
 }
 
 
@@ -55,99 +54,29 @@ html, body {
  background-color: #DDDDDD ;
  color: #2d2d2d;
  font-size: 20px;
- margin: 0 0 20px 0;
+ margin-top: -30px;
  padding: 20px 0;
-}
-
-.thumbnail {
- border: 0px;
- max-width: 30%;
- position: relative;
- padding: 50px;
-   border-radius: 0;
-   margin-bottom:50px;
-  
-}
-
-.thumbnail img {
-   margin-top: 10px;
- margin-bottom: 30px;
- max-width: 100%;
-}
-
-.price {
- background-color: #39D1B4 ;
- color: #fff;
- font-size: 16px;
-   border-radius: 50%;
-   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-   font-weight: 200;
-   height: 70px;
-   line-height: 70px;
-   text-align: center;
-   width: 70px;
- position: absolute;
- top: -30px;
- right: -30px;
 }
 
 .categories {
    border: opx;
-   max-width: 33%;
    position: relative;
    display: inline-block;
    text-align: center;
+   padding: 20px;
+   border-radius: 0;
+   margin-bottom:10px;
 }
 
 .categories img {
    margin-top: 10px;
  margin-bottom: 10px;
  max-width: 100%;
- height: 300px;
+ /*height: 350px;*/
+ 
 }
 
-
-.btn1 {
-   font-family: 'Roboto', sans-serif;
-   color: #2d2d2d;
-   font-size:20px;
-   font-weight: bold;
-   text-decoration: none;
-   
-   padding-top: 15px;
-   max-width: 150px;
-   display: inline-block;
-   text-align: center;
-   float: left;
+.categories h2 {
+   margin-top: 10px;
 }
 
-.btn1:hover {  
-   
-   font-size:22px;
-
-}
-
-#bt1 {
-   position: absolute;
-   left: 50px;
-}
-#bt2 {
-   position: absolute;
-   left: 200px;
-}
-#bt3 {
-   position: absolute;
-   left: 280px;
-}
-#bt4 {
-   position: absolute;
-   left: 370px;
-}
-#bt5 {
-   position: absolute;
-   left: 480px;
-}
-
-.about p {
-   font-size: 22px
-}

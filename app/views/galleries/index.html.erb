@@ -1,0 +1,22 @@
+<% provide(:gallery, "active")%>
+
+<div class="main" >    
+    <div class = "container-fluid">  
+        <div class = "row">
+            <% @products.each do |p| %>
+                <div class="col-sm-6 col-md-4">
+                   <div class="thumbnail">
+                       <div class="caption">
+                           <% pic = @pictures.find_by_id(p.id) %>
+                            <%= image_tag pic.image.url(:medium)  %>
+                            <h3><%=p.name %></h2>
+                            <p class = "price"><%= number_to_currency(p.price) %></p>
+                            <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+                        </div>
+                    </div>
+                </div>
+            <% end %> 
+        </div>   
+    </div>
+</div>
+

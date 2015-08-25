@@ -38,3 +38,9 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'rails_admin'
+gem "paperclip", "~> 4.3"
+gem 'aws-sdk', '~> 2'
+gem 'ohm', '~> 2.3.0'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'sass-rails', '>= 3.2'
