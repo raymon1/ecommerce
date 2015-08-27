@@ -1,20 +1,29 @@
 <% provide(:gallery, "active")%>
 
 <div class="main" >    
-    <div class = "container"> 
+    <div class = "container"> <h2><%=@c%> <%=cartcount%></h2>
         <% @products.each do |p| %>
-            <div class="col-sm-12 col-md-4">
-               <div class="thumbnail">                       
-                    <% pic = @pictures.find_by_id(p.id) %>
-                    <%= image_tag pic.image.url(:medium)  %>
-                    <div class="caption">
-                        <h3><%=p.name %></h3>
-                        <p><%= number_to_currency(p.price) %></p>
-                        <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
-                    </div>
-                </div>
+        <div class="col-sm-12 col-md-4">
+           <div class="thumbnail">                       
+            <% pic = @pictures.find_by_id(p.id) %>
+            <%= image_tag pic.image.url(:large)  %>
+            <div class="caption">
+                <h3><%=p.name %></h3>
+                <p><%= number_to_currency(p.price) %></p>
+                <%= form_for :cartproduct, remote: true  do |f| %>
+                <%= f.hidden_field :product_id, value: p.id %>
+                <%= f.hidden_field :price, value: p.price %>
+                <%= f.hidden_field :name, value: p.name %>
+                <p><%= f.submit 'Add To Cart', class: "btn btn-primary" ,role:"button" %> <%= f.number_field :amount, value: 1, id: "quantity", min: 1 ,max: 99%></p>
+                <% end %>
+                <%= form_for :cartproduct, remote: true, method: 'delete'  do |f| %>
+                <%= f.hidden_field :product_id, value: p.id %>
+                <p><%= f.submit 'Remove', method: 'DELETE', class: "btn btn-primary" ,role:"button" %> </p>          
+                <% end %>
             </div>
-        <% end %>           
+        </div>
     </div>
+    <% end %>           
+</div>
 </div>
 
