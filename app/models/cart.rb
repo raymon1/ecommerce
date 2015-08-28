@@ -16,6 +16,18 @@ class Cart < Ohm::Model
 	    @total_price ||= total
 	end
 
+  def count_cart_items
+    count=0
+    self.cartproducts.each do |cp|
+      count = count + cp.amount.to_i
+    end
+    @total_count ||= count
+  end
+
+
+
+
+
 	def paypal_url(return_url)
   values = {
     :business => 'raymonmina-seller@gmail.com',

@@ -1,5 +1,6 @@
 class CartproductController < ApplicationController
-	
+	before_action :current_user
+
 	def create 
 		puts "creatinggggggggggggggggggggggggggggggggggggggggg"
 		currentu = current_user
