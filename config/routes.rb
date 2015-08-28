@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   post 'checkouts' => 'checkouts#create'
   put 'checkouts' => 'checkouts#update'
 
+  post 'paypalcheckout' => 'paypalcheckout#create'
+  post 'paypalcheckout/hook' => 'paypalcheckout#hook'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

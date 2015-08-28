@@ -14,8 +14,7 @@ class CheckoutsController < ApplicationController
 	def new
 	end
 
-	def index
-		@cart = Cart[session[:current_cart_id]]
+	def index		
 	end
 
 	private

@@ -2,9 +2,7 @@
 <div class="main" >  
   <div class ="container"> 
 
-
-
-		<%= link_to "PayPal checkout", @cart.paypal_url("/galleries")%>
+	<%= link_to "PayPal checkout", "/paypalcheckout" , method: "post" %>
 
   </div>
 </div>
