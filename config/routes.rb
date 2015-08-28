@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'checkouts/new' => 'checkouts#new'
   post 'checkouts/new' =>  'checkouts#create'
   post 'checkouts' => 'checkouts#create'
-  put 'checkouts' => 'checkouts#update'
+#  put 'checkouts' => 'checkouts#update'
 
   post 'paypalcheckout' => 'paypalcheckout#create'
   post 'paypalcheckout/hook' => 'paypalcheckout#hook'
