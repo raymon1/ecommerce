@@ -1,6 +1,5 @@
 class CartproductController < ApplicationController
-	before_action :current_user
-
+	
 	def create 
 		puts "creatinggggggggggggggggggggggggggggggggggggggggg"
 		currentu = current_user
@@ -35,17 +34,19 @@ class CartproductController < ApplicationController
 
 			end
 		end
-		puts cart.quantity
-		puts cartcount
+		
 		cartproduct.save
-			cart.save
+		cart.save
 
-		redirect_to '/galleries'
+		#redirect_to '/galleries'
+		#format.js {render inline: "location.reload();" }
+		redirect_to :back
 	end
 	
 
 	def destroy
 		puts "destroyingggggggggggggggggggggggggg"
+		current_user
 		cart = Cart[session[:current_cart_id]]
 		productid = params[:cartproduct][:product_id]
 		prod_id_cart_id = "#{productid}_#{cart.id}"		

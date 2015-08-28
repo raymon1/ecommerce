@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration
     	t.string :address
     	t.string :country
     	t.string :city
-      t.boolean :guest
+      t.string :guest
 
       t.timestamps
     end

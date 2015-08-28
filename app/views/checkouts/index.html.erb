@@ -1,0 +1,11 @@
+<% provide(:checkout, "active")%>
+<div class="main" >  
+  <div class ="container"> 
+
+
+
+		<%= link_to "PayPal checkout", @cart.paypal_url("/galleries"),  target: "_blank" %>
+
+  </div>
+</div>
+

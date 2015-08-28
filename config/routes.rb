@@ -5,9 +5,20 @@ Rails.application.routes.draw do
   get '/home' => 'pages#home'
   get '/about' => 'pages#about'
   get '/galleries' => 'galleries#index'
+
   post '/carts/create' => 'carts#create'
-  post 'galleries' => 'cartproduct#create'
+
+  post 'galleries' => 'cartproduct#create'  
   delete 'galleries' => 'cartproduct#destroy'
+
+  get 'checkouts' => 'checkouts#index'
+  get 'checkouts/new' => 'checkouts#new'
+  post 'checkouts/new' =>  'checkouts#create'
+  post 'checkouts' => 'checkouts#create'
+  put 'checkouts' => 'checkouts#update'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
   def create_guest_user
    if !session[:current_user_id].present?
-        		gu = User.create(name: "Guest", email: "guest_#{Time.now.to_i}#@guest.com") # guest: true,
+        		gu = User.create(name: "Guest", email: "guest_#{Time.now.to_i}#@guest.com", guest: "y")
         		cart =Cart.create(user_id: gu.id, quantity: "0")
         		#ExpireGuestUsersWorker.perform_in(User::GUEST_EXPIRE_IN, gu.id)
            session[:current_user_id] = gu.id
@@ -41,6 +41,13 @@ class ApplicationController < ActionController::Base
     @cu
   end
 
+  def require_not_guest 
+    redirect_to '/checkouts/new' if current_user_is_guest? 
+  end
+
+  def current_user_is_guest? 
+    return current_user[:guest]=="y"? true : false
+  end
 
 
 end
