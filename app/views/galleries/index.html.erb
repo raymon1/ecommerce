@@ -1,8 +1,16 @@
 <% provide(:gallery, "active")%>
+<% provide(:title, "Gallery")%>
+
 
 <div class="main" >    
-    <div class = "container"> <h2><%=@c%> <%=cartcount%></h2>
-        <% @products.each do |p| %>
+    <div class = "container">
+<script>
+function myFunction() {
+    
+    document.getElementById("cartcounter").innerHTML = <%=cartcount%>;
+}
+</script>
+    <% @products.each do |p| %>
         <div class="col-sm-12 col-md-4">
            <div class="thumbnail">                       
             <% pic = @pictures.find_by_id(p.id) %>
@@ -14,16 +22,17 @@
                 <%= f.hidden_field :product_id, value: p.id %>
                 <%= f.hidden_field :price, value: p.price %>
                 <%= f.hidden_field :name, value: p.name %>
-                <p><%= f.submit 'Add To Cart', class: "btn btn-primary" ,role:"button" %> <%= f.number_field :amount, value: 1, id: "quantity", min: 1 ,max: 99%></p>
+                <p><%= f.submit 'Add To Cart', class: "btn btn-primary" ,role:"button", onclick: "myfunction()" %> <%= f.number_field :amount, value: 1, id: "quantity", min: 1 ,max: 99%></p>
                 <% end %>
                 <%= form_for :cartproduct, remote: true, method: 'delete'  do |f| %>
                 <%= f.hidden_field :product_id, value: p.id %>
-                <p><%= f.submit 'Remove', method: 'DELETE', class: "btn btn-primary" ,role:"button" %> </p>          
+                <p><%= f.submit 'Remove', method: 'DELETE', class: "btn btn-primary" ,role:"button", onclick:"myFunction()"%>  </p>          
                 <% end %>
             </div>
         </div>
     </div>
-    <% end %>           
+    <% end %>  
+    </div>         
 </div>
 </div>
 

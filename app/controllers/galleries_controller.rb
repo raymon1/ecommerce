@@ -16,7 +16,7 @@ class GalleriesController < ApplicationController
 		@pictures=Picture.all
 				
 		@c = session[:current_user_id]
-	
+		@carcount = cartcount
 	end
 
 end

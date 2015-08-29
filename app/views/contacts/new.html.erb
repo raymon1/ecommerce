@@ -1,0 +1,43 @@
+<% provide(:contactus, "active")%>
+<% provide(:title, "Contact Us")%>
+
+
+<div class="main" >  
+  <div class ="container">  
+    
+      <div class="col-md-6 col-md-offset-1">
+        <div class="myform">
+             
+          <%= form_for :contact, action:"/contacts", method:"post" do |f| %>
+          <%= f.label :Name %><br>
+          <%= f.text_field :name, style: "width: 80%" %><br><br>
+
+          <%= f.label :Email %><br>
+          <%= f.email_field :email, style: "width: 80%"%><br><br>
+
+          <%= f.label :Message %><br>
+          <%= f.text_area :message ,rows: 7, style: "width: 80%" %><br><br>
+
+          <%= f.submit "Submit", class: "btn btn-primary", onclick: "myfunction()" %>
+          <% end %>
+          <p class="message1"></p>
+        </div>
+      </div>
+       <div class = "col-md-4 col-md-offset-1">
+          <address>
+    <h3>Office Location</h3>
+    <p class="lead"><a href="https://www.google.com/maps/preview?ie=UTF-8&q=The+Pentagon&fb=1&gl=us&hq=1400+Defense+Pentagon+Washington,+DC+20301-1400&cid=12647181945379443503&ei=qmYfU4H8LoL2oATa0IHIBg&ved=0CKwBEPwSMAo&safe=on">The Pentagon<br>
+Washington, DC 20301</a><br>
+      Phone: XXX-XXX-XXXX<br>
+      Fax: XXX-XXX-YYYY</p>
+    </address>
+        </div>
+       
+    </div>
+  </div>
+
+  <style>
+    .myform{
+      min-width:700px;
+    }
+  </style>

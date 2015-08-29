@@ -17,9 +17,11 @@
         <li class="<%=yield(:home)%>" ><%= link_to " Home ", '/home'%></li>
         <li class="<%=yield(:gallery)%>"><%= link_to " Gallery ", '/galleries'%></li>
         <li class="<%=yield(:about)%>"><%= link_to " About Us ", '/about'%></li>
-        <li class="<%=yield(:contactus)%>"><%= link_to " Contact Us ", '/home'%></li> 
-        <li class="<%=yield(:checkout)%>"><%= link_to " Checkout ", '/checkouts'%></li>      
-      </ul>      
+        <li class="<%=yield(:contactus)%>"><%= link_to " Contact Us ", '/contacts'%></li> 
+        <li><a href="/checkouts">Checkout  <span class="badge", id="cartcounter"><%=cartcount%></span></a></li>  
+
+      </ul>    
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+

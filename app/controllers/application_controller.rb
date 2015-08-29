@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user_is_guest? 
-    
+    current_user
     return current_user[:guest]=="y"? true : false
   end
 

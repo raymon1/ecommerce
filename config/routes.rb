@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/home' => 'pages#home'
   get '/about' => 'pages#about'
   get '/galleries' => 'galleries#index'
+  
 
   post '/carts/create' => 'carts#create'
 
@@ -19,6 +20,9 @@ Rails.application.routes.draw do
 
   post 'paypalcheckout' => 'paypalcheckout#create'
   post 'paypalcheckout/hook' => 'paypalcheckout#hook'
+
+  get '/contacts' => 'contacts#new'
+  post '/contacts' => 'contacts#create'
 
 
 

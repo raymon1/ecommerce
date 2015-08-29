@@ -1,6 +1,11 @@
-// Place all the styles related to the Pages controller here.
+
+// Place all the styles related to the contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
 
 html, body {
  margin: 0;
@@ -36,8 +41,8 @@ html, body {
 
 .main h1 {
  color: #F65A5B ;
- font-size: 52px;
- margin: 0 0 10px 0;
+ font-size: 64px;
+ margin: 0 0 40px 0;
  padding: 15px 0;
    line-height: 100px;
    width: 100%;
@@ -81,3 +86,6 @@ html, body {
    margin-top: 10px;
 }
 
+ .myform{
+      min-width:700px;
+    }

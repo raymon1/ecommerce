@@ -38,10 +38,11 @@ class CartproductController < ApplicationController
 		
 		cartproduct.save
 		cart.save
-
+		@cartcount = cartcount
 		#redirect_to '/galleries'
 		#format.js {render inline: "location.reload();" }
-		redirect_to :back
+		#redirect_to :back
+		render :new
 	end
 	
 
